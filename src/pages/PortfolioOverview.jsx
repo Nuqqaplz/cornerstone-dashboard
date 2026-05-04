@@ -50,6 +50,7 @@ export default function PortfolioOverview() {
   const [gbpData, setGbpData] = useState([])
   const [stats, setStats] = useState(null)
   const [loading, setLoading] = useState(true)
+  const [latestPeriod, setLatestPeriod] = useState(null)
 
   useEffect(() => {
     async function fetchAll() {
@@ -72,6 +73,7 @@ export default function PortfolioOverview() {
         .order('period_end', { ascending: false })
 
       if (!audits) { setLoading(false); return }
+      if (audits.length > 0) setLatestPeriod(audits[0].period_end)
 
       // Keep latest row per location+source
       const seen = {}
@@ -138,7 +140,7 @@ export default function PortfolioOverview() {
       <div className="mb-8">
         <h1 className="text-2xl font-bold text-gray-900">Portfolio Overview</h1>
         <p className="text-gray-500 text-sm mt-1">
-          Aggregate metrics across all 13 Cornerstone Storage locations · Last updated: May 2026
+          Aggregate metrics across all 13 Cornerstone Storage locations · Last updated: {latestPeriod ? new Date(latestPeriod + "T00:00:00").toLocaleDateString("en-US", { month: "short", year: "numeric" }) : "..."}
         </p>
       </div>
 
