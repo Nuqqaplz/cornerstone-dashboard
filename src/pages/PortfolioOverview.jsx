@@ -138,7 +138,7 @@ export default function PortfolioOverview() {
       <div className="mb-8">
         <h1 className="text-2xl font-bold text-gray-900">Portfolio Overview</h1>
         <p className="text-gray-500 text-sm mt-1">
-          Aggregate metrics across all 13 Cornerstone Storage locations · Jan–Apr 2026
+          Aggregate metrics across all 13 Cornerstone Storage locations · Last updated: May 2026
         </p>
       </div>
 
