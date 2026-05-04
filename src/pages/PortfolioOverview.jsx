@@ -140,7 +140,7 @@ export default function PortfolioOverview() {
       <div className="mb-8">
         <h1 className="text-2xl font-bold text-gray-900">Portfolio Overview</h1>
         <p className="text-gray-500 text-sm mt-1">
-          Aggregate metrics across all 13 Cornerstone Storage locations · Last updated: {latestPeriod ? new Date(latestPeriod + "T00:00:00").toLocaleDateString("en-US", { month: "short", year: "numeric" }) : "..."}
+          Aggregate metrics across all 13 Cornerstone Storage locations · Last updated: {latestPeriod ? new Date(latestPeriod + "T00:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }) : "..."}
         </p>
       </div>
 
